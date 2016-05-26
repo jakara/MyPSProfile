@@ -1,5 +1,5 @@
 
-Function global:Get-dbTableColumns{ 
+Function Get-dbTableColumns{ 
     <#  
     .SYNOPSIS 
         Gives you a list of all the tables column basic information of the specified Database.  
@@ -80,5 +80,5 @@ ORDER BY c.OBJECT_ID, c.Column_Id;
  
 };
 
-Set-Alias gtc Get-dbTableColumns -Scope Global
+Set-Alias gtc Get-dbTableColumns 
 echo "gtc -> Get-dbTableColumns"

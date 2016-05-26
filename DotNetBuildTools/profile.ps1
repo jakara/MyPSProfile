@@ -1,2 +1,2 @@
 
-& (Join-Path $PSScriptRoot 'Start-BuildingVSSolution.ps1')
+. (Join-Path $PSScriptRoot 'Start-BuildingVSSolution.ps1')

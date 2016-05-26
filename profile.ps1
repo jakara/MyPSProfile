@@ -7,7 +7,7 @@ Import-Module PSReadline
 $desktop = $env:USERPROFILE + '\desktop'
 
 ############################Set-Alias#############################
-set-alias open explorer.exe
+set-alias open explorer.exe #pretty like start -> Start-Process
 #########################Define functions############################
 
 function reloadProfile () {
@@ -19,6 +19,6 @@ function reloadProfile () {
 }
 
 #######################Load sub-profiles#######################
-& (Join-Path $PSScriptRoot 'DotNetBuildTools\profile.ps1')
-& (Join-Path $PSScriptRoot 'SqlServer\profile.ps1')
+. (Join-Path $PSScriptRoot 'DotNetBuildTools\profile.ps1')
+. (Join-Path $PSScriptRoot 'SqlServer\profile.ps1')
  
