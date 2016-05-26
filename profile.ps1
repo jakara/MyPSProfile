@@ -6,9 +6,17 @@ Import-Module PSReadline
 ##################Define Var####################
 $desktop = $env:USERPROFILE + '\desktop'
 
+############################Set-Alias#############################
+set-alias open explorer.exe
+#########################Define functions############################
 
-#echo $PSScriptRoot
-
+function reloadProfile () {
+    clear
+    Push-Location
+    & $profile
+    Pop-Location
+    echo "profile reloaded:$profile"
+}
 
 #######################Load sub-profiles#######################
 & (Join-Path $PSScriptRoot 'DotNetBuildTools\profile.ps1')
