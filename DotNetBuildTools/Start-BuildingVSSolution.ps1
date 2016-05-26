@@ -1,5 +1,5 @@
 
-function global:Start-BuildingVSSolution            
+function Start-BuildingVSSolution            
 {            
     param            
     (
@@ -156,5 +156,5 @@ function global:Start-BuildingVSSolution
              
 }
 
-Set-Alias compile Start-BuildingVSSolution -Scope Global
+Set-Alias compile Start-BuildingVSSolution 
 echo "compile -> Start-BuildingVSSolution"
