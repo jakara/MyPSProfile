@@ -1,5 +1,11 @@
 ##################Import Modules####################
-Import-Module PSReadline
+if ((Get-Module PSReadLine | measure).Count -eq 0)
+{
+    Import-Module 'C:\Program Files\WindowsPowerShell\Modules\PSReadline\1.1\PSReadLine.psm1'
+}
+else{
+    Import-Module PSReadline
+}
 
 #Import-Module Pscx
 
