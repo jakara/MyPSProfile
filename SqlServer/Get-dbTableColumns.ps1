@@ -62,7 +62,7 @@ JOIN sys.schemas as s on s.schema_id = t2.schema_id
 ORDER BY c.OBJECT_ID, c.Column_Id; 
 "@ 
  
-    if ($SQLInstanceName.Length -eq 0){ $SQLInstanceName = '.' }; 
+    if ($ServerInstance.Length -eq 0){ $ServerInstance = '.' }; 
  
     Try{ 
         push-location
@@ -74,7 +74,7 @@ ORDER BY c.OBJECT_ID, c.Column_Id;
          
     } Catch { 
      
-      Write-Host "Get-dbTableColumns $SQLInstanceName - $DatabaseName Failed: $_.exception.message" -Fore red -back black 
+      Write-Host "Get-dbTableColumns $ServerInstance - $DatabaseName Failed: $_.exception.message" -Fore red -back black 
      
     } 
  
