@@ -27,4 +27,5 @@ function reloadProfile () {
 #######################Load sub-profiles#######################
 . (Join-Path $PSScriptRoot 'DotNetBuildTools\profile.ps1')
 . (Join-Path $PSScriptRoot 'SqlServer\profile.ps1')
+. (Join-Path $PSScriptRoot 'Office\profile.ps1')
  
