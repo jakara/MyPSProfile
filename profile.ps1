@@ -1,9 +1,8 @@
 ##################Import Modules####################
-if ((Get-Module PSReadLine | measure).Count -eq 0)
-{
+if ((Get-Module PSReadLine | measure).Count -eq 0) {
     Import-Module 'C:\Program Files\WindowsPowerShell\Modules\PSReadline\1.1\PSReadLine.psm1'
 }
-else{
+else {
     Import-Module PSReadline
 }
 
@@ -25,7 +24,7 @@ function reloadProfile () {
 }
 
 #######################Load sub-profiles#######################
+. (Join-Path $PSScriptRoot 'Common\profile.ps1')
 . (Join-Path $PSScriptRoot 'DotNetBuildTools\profile.ps1')
 . (Join-Path $PSScriptRoot 'SqlServer\profile.ps1')
 . (Join-Path $PSScriptRoot 'Office\profile.ps1')
- 
