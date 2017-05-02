@@ -1,18 +1,17 @@
 
-Function Search-WordFile
-{  
-    Param( 
-            [Parameter(Mandatory=$true, Position=0)] [string[]] $Files, 
-            [Parameter(Mandatory=$true, Position=1)] [string] $FindText, 
-            [switch] $MatchCase,
-            [switch] $MatchWholeWord,
-            [switch] $MatchWildCards,
-            [switch] $MatchSoundsLike,
-            [switch] $MatchAllWordForms,
-            [switch] $Forward,
-            [switch] $Wrap
-            
-    ) 
+Function Search-WordFile {
+    Param(
+        [Parameter(Mandatory = $true, Position = 0)] [string[]] $Files,
+        [Parameter(Mandatory = $true, Position = 1)] [string] $FindText,
+        [switch] $MatchCase,
+        [switch] $MatchWholeWord,
+        [switch] $MatchWildCards,
+        [switch] $MatchSoundsLike,
+        [switch] $MatchAllWordForms,
+        [switch] $Forward,
+        [switch] $Wrap
+
+    )
 
     $application = New-Object -comobject word.application
     $application.visible = $False
@@ -25,19 +24,17 @@ Function Search-WordFile
     #$totaldocs = 0
 
     $res = @()
-    Foreach ($file in $Files)
-    {
-        Write-Progress -Activity "Processing files" -status "Processing $($file)" -PercentComplete ($i /$Files.Count * 100) 
+    Foreach ($file in $Files) {
+        Write-Progress -Activity "Processing files" -status "Processing $($file)" -PercentComplete ($i / $Files.Count * 100)
         #echo "processing $($doc.FullName)"
-        if($file.endswith(".docx") -and (Test-Path -Path $file)){            
+        if ($file.endswith(".docx") -and (Test-Path -Path $file)) {
             $document = $application.documents.open($file)
             $range = $document.content
             $null = $range.movestart()
-            $wordFound = $range.find.execute($FindText,$MatchCase,
-                                                $MatchWholeWord,$MatchWildCards,$MatchSoundsLike,
-                                                $MatchAllWordForms,$Forward,$Wrap)
-            if($wordFound) 
-            {
+            $wordFound = $range.find.execute($FindText, $MatchCase,
+                $MatchWholeWord, $MatchWildCards, $MatchSoundsLike,
+                $MatchAllWordForms, $Forward, $Wrap)
+            if ($wordFound) {
                 $res += $file
                 #echo "found in  $($doc.FullName)"
                 #$doc.fullname
@@ -52,7 +49,7 @@ Function Search-WordFile
         }
     } #end foreach $doc
     $application.quit()
-    
+
 
     #clean up stuff
     [System.Runtime.InteropServices.Marshal]::ReleaseComObject($application) | Out-Null
@@ -64,7 +61,7 @@ Function Search-WordFile
 };
 
 Set-Alias searchword Search-WordFile
-echo "searchword -> Search-WordFile"
+Write-Output "searchword -> Search-WordFile"
 
 #test case
 # searchword -Files (ls | %{$_.FullName}) -FindText "微信"

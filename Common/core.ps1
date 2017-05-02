@@ -18,4 +18,13 @@ function bitshift {
     }
     return [math]::Floor($x * [math]::Pow(2, $shift))
 }
-echo "common -> bitshift"
+Write-Output "common -> bitshift"
+
+function reloadProfile () {
+    Clear-Host
+    Push-Location
+    . $profile
+    Pop-Location
+    Write-Output "profile reloaded:$profile"
+}
+Write-Output "common -> reloadProfile"
