@@ -4,6 +4,13 @@ $env:PYTHONIOENCODING = 'utf-8' # found this solution at https://github.com/nvbn
 Invoke-Expression "$(thefuck --alias)"
 Write-Output "common -> fuck"
 
+#boot to zsh
+
+function zsh { bash -c zsh}
+
+Write-Output "common -> zsh"
+
+#bitshift
 function bitshift {
     param(
         [Parameter(Mandatory, Position = 0)]
