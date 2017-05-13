@@ -6,7 +6,7 @@ Write-Output "common -> fuck"
 
 #boot to zsh
 
-function zsh { bash -c zsh}
+function zsh { C:\WINDOWS\system32\bash.exe -c zsh }#写全路径， 防止在某些软件的集成终端中调用失败
 
 Write-Output "common -> zsh"
 
