@@ -1,8 +1,8 @@
 #pip install thefuck
 #pip install thefuck --upgrade
 $env:PYTHONIOENCODING = 'utf-8' # found this solution at https://github.com/nvbn/thefuck/issues/514
-Invoke-Expression "$(thefuck --alias)"
-Write-Output "common -> fuck"
+# Invoke-Expression "$(thefuck --alias)"
+# Write-Output "common -> fuck"
 
 #boot to zsh
 
