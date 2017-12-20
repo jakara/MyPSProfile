@@ -1,1 +1,2 @@
-. (Join-Path $PSScriptRoot 'Set-PinnedApplication.ps1')
+
+import-module ".\Windows\Windows.psm1"

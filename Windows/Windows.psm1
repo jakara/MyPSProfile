@@ -1,5 +1,30 @@
 
-
+###########################################################################"
+#
+#
+# NAME: Windows.psm1
+#
+# AUTHOR: Jan Egil Ring, Crayon
+#
+# DATE  : 06.08.2010
+#
+# COMMENT: Module with the ability to pin and unpin programs from the taskbar and the Start-menu in Windows 7 and Windows Server 2008 R2.
+#
+# This module are based on the Add-PinnedApplication script created by Ragnar Harper and Kristian Svantorp:
+# http://blogs.technet.com/kristian/archive/2009/04/24/nytt-script-pin-to-taskbar.aspx
+# http://blog.crayon.no/blogs/ragnar/archive/2009/04/17/pin-applications-to-windows-7-taskbar.aspx
+#
+# Johan Akerstrom's blog: http://cosmoskey.blogspot.com
+#
+# For more information, see the following blog post:
+# http://blog.crayon.no/blogs/janegil/archive/2010/02/26/pin-and-unpin-applications-from-the-taskbar-and-start-menu-using-windows-powershell.aspx
+#
+# VERSION HISTORY:
+# 1.0 17.04.2009 - Initial release by Ragnar Harper and Kristian Svantorp
+# 1.1 26.02.2010 - Update by Jan Egil Ring. Added the capability to unpin applications.
+# 1.2 06.08.2010 - Update by Johan Akerstrom. Added full MUI support.
+#
+###########################################################################"
 function Set-PinnedApplication {
     <#
 .SYNOPSIS
@@ -76,5 +101,5 @@ Set-PinnedApplication -Action UnPinFromStartMenu -FilePath "C:\WINDOWS\system32\
     }
     InvokeVerb -FilePath $FilePath -Verb $(GetVerb -VerbId $verbs.$action)
 }
-
+Export-ModuleMember Set-PinnedApplication
 Write-Output "Set-PinnedApplication -> Set-PinnedApplication"
