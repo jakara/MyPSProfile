@@ -1,0 +1,1 @@
+. (Join-Path $PSScriptRoot 'Set-PinnedApplication.ps1')

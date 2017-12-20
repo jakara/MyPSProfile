@@ -26,3 +26,4 @@ set-alias open explorer.exe #pretty like start -> Start-Process
 . (Join-Path $PSScriptRoot 'DotNetBuildTools\profile.ps1')
 . (Join-Path $PSScriptRoot 'SqlServer\profile.ps1')
 . (Join-Path $PSScriptRoot 'Office\profile.ps1')
+. (Join-Path $PSScriptRoot 'Windows\profile.ps1')
