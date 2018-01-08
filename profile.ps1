@@ -23,7 +23,7 @@ set-alias open explorer.exe #pretty like start -> Start-Process
 
 #######################Load sub-profiles#######################
 . (Join-Path $PSScriptRoot 'Common\profile.ps1')
-. (Join-Path $PSScriptRoot 'DotNetBuildTools\profile.ps1')
-. (Join-Path $PSScriptRoot 'SqlServer\profile.ps1')
-. (Join-Path $PSScriptRoot 'Office\profile.ps1')
-. (Join-Path $PSScriptRoot 'Windows\profile.ps1')
+# . (Join-Path $PSScriptRoot 'DotNetBuildTools\profile.ps1')
+# . (Join-Path $PSScriptRoot 'SqlServer\profile.ps1')
+# . (Join-Path $PSScriptRoot 'Office\profile.ps1')
+# . (Join-Path $PSScriptRoot 'Windows\profile.ps1')
